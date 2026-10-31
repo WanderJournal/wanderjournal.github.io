@@ -24,6 +24,6 @@ window.WJ_CONFIG = {
    * To receive messages without that step, create a free form at formspree.io and paste its
    * endpoint here, e.g. 'https://formspree.io/f/abcdwxyz'.
    */
-  contactFormEndpoint: '',
+  contactFormEndpoint: 'https://formspree.io/f/xjyyawol',
   contactEmail: 'wanderjournalglobal@gmail.com'
 };
