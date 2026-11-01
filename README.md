@@ -24,7 +24,7 @@ A rebuild of your Wix site in plain HTML/CSS/JS, with Stripe checkout. It has no
 2. **Create 6 products** (Product catalogue → Add product), all priced in AUD:
    - Wander Journal – Pink, Green, Blue, Grey: **$30** each
    - Wander Journal – Tri-colour Pack: **$74.95**
-   - Wander Journal – Quad-colour Pack: **$89.95**
+   - Wander Journal – Quad-colour Pack: **$80**
 
    Add a photo to each one. You can use the files in `assets/img`.
 3. **Create a Payment Link for each product** (Payment Links → New). On each link:
@@ -86,7 +86,7 @@ The domain is billed separately from your Wix plan, so first check it hasn't exp
 
 ## 5. Making changes later
 
-- **Prices:** change them in Stripe *and* in the HTML. Search the files for `30.00`, `74.95` and `89.95`.
+- **Prices:** change them in Stripe *and* in the HTML. Search the files for the old price (e.g. `80`): it appears on the product page, the home and shop cards, and in each page's `"price"` and `data-price` values.
 - **Sales:** create a discount code in Stripe (Product catalogue → Coupons), then put the same code and the sale dates in `promo` in `assets/js/config.js`. During those dates a popup and the top bar advertise it. Add `?preview-sale` to any page address to preview it.
 - **Text:** edit the `.html` files directly.
 - **Colours and fonts:** the top of `assets/css/styles.css`. Button text on beige is dark so it's easy to read. Set `--on-beige: #FAFAFA;` to go back to the white text your Wix site used.
