@@ -25,5 +25,21 @@ window.WJ_CONFIG = {
    * endpoint here, e.g. 'https://formspree.io/f/abcdwxyz'.
    */
   contactFormEndpoint: 'https://formspree.io/f/xjyyawol',
-  contactEmail: 'wanderjournalglobal@gmail.com'
+  contactEmail: 'wanderjournalglobal@gmail.com',
+
+  /*
+   * Sale popup — advertises a discount code you've created in Stripe (Product catalogue → Coupons).
+   * The code must match Stripe exactly. From the start date to the end date (inclusive), each visitor
+   * sees a popup once and the top bar mentions the code. Outside those dates nothing shows, so you can
+   * set up the next sale early. Set show to false to switch it off.
+   * Preview it any time by adding ?preview-sale to a page address, e.g. https://wanderjournal.github.io/?preview-sale
+   */
+  promo: {
+    show: true,
+    title: 'Black Friday Sale',
+    text: '20% off everything',
+    code: 'BLACKFRIDAY20',
+    starts: '2026-11-27',  // first day of the sale (YYYY-MM-DD)
+    ends: '2026-11-30'     // last day of the sale
+  }
 };

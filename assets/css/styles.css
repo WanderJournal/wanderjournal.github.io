@@ -47,6 +47,18 @@ button, input, textarea, select { font: inherit; color: inherit; }
 /* ---------- Header ---------- */
 .site-header { position: relative; z-index: 20; background: var(--beige); }
 .announcement { margin: 0; padding: 8px 16px; background: var(--ink); color: var(--paper); font-size: 13px; line-height: 1.5; letter-spacing: .04em; text-align: center; }
+/* Sale popup (settings in assets/js/config.js) */
+.promo { width: min(420px, calc(100% - 32px)); padding: 0; border: 0; background: var(--paper); color: var(--ink); box-shadow: 0 20px 60px rgba(0, 0, 0, .25); }
+.promo::backdrop { background: rgba(26, 26, 26, .55); }
+.promo-inner { position: relative; padding: 44px 32px 28px; text-align: center; }
+.promo h2 { margin-bottom: 8px; font-size: 32px; }
+.promo-text { margin-bottom: 22px; font-family: var(--font-display); font-size: 18px; }
+.promo-label { margin-bottom: 6px; color: var(--muted); font-size: 13px; }
+.promo-code { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; padding: 8px 8px 8px 16px; border: 1px dashed var(--muted); font-size: 18px; letter-spacing: .08em; }
+.promo-copy { padding: 6px 14px; border: 0; background: var(--beige); color: var(--on-beige); font-size: 13px; letter-spacing: 0; cursor: pointer; }
+.promo-copy:hover { background: var(--ink); color: #fff; }
+.promo-note { margin: 14px 0 0; color: var(--muted); font-size: 13px; }
+.promo-close { position: absolute; top: 6px; right: 8px; width: 40px; height: 40px; padding: 0; border: 0; background: none; font-size: 28px; line-height: 1; cursor: pointer; }
 .header-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: var(--header-h); padding: 0 12px; }
 .brand { justify-self: start; display: flex; align-items: center; gap: 22px; color: #fff; text-decoration: none; }
 .brand img { width: 92px; height: auto; }

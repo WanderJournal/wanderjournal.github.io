@@ -203,4 +203,75 @@
       }
     });
   }
+
+  /* ---------- Sale popup and banner ---------- */
+  var promo = config.promo || {};
+  var previewSale = new URLSearchParams(window.location.search).has('preview-sale');
+
+  function saleIsOn() {
+    if (!promo.code || document.querySelector('[data-no-promo]')) return false;
+    if (previewSale) return true;
+    if (!promo.show) return false;
+    var now = new Date();
+    if (promo.starts && now < new Date(promo.starts + 'T00:00:00')) return false;
+    if (promo.ends && now > new Date(promo.ends + 'T23:59:59')) return false;
+    return true;
+  }
+
+  if (saleIsOn()) {
+    var saleText = promo.text || 'Sale';
+    var bar = document.querySelector('[data-announcement]');
+    if (bar) {
+      bar.textContent = (promo.title ? promo.title + ': ' : '') + saleText + ' with code ' + promo.code + ' · ' + bar.textContent;
+    }
+
+    var seenKey = 'wj-sale-seen-' + promo.code;
+    var seen = false;
+    try { seen = window.localStorage.getItem(seenKey) === '1'; } catch (err) { /* storage blocked */ }
+
+    var dialog = document.createElement('dialog');
+    if ((previewSale || !seen) && typeof dialog.showModal === 'function') {
+      dialog.className = 'promo';
+      dialog.setAttribute('aria-labelledby', 'promo-title');
+      dialog.innerHTML =
+        '<div class="promo-inner">' +
+          '<button class="promo-close" type="button" aria-label="Close">&times;</button>' +
+          '<h2 id="promo-title"></h2>' +
+          '<p class="promo-text"></p>' +
+          '<p class="promo-label">Use this code at checkout</p>' +
+          '<div class="promo-code"><span data-promo-code></span><button class="promo-copy" type="button">Copy</button></div>' +
+          '<a class="btn btn-dark btn-block" href="shop.html">Shop now</a>' +
+          '<p class="promo-note"></p>' +
+        '</div>';
+      dialog.querySelector('#promo-title').textContent = promo.title || saleText;
+      dialog.querySelector('.promo-text').textContent = promo.title ? saleText : '';
+      dialog.querySelector('[data-promo-code]').textContent = promo.code;
+
+      var note = 'Free shipping Australia-wide.';
+      if (promo.ends) {
+        var endDay = new Date(promo.ends + 'T00:00:00');
+        if (!isNaN(endDay)) note = 'Ends ' + endDay.toLocaleDateString('en-AU', { day: 'numeric', month: 'long' }) + '. ' + note;
+      }
+      dialog.querySelector('.promo-note').textContent = note;
+
+      var copyButton = dialog.querySelector('.promo-copy');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        copyButton.addEventListener('click', function () {
+          navigator.clipboard.writeText(promo.code).then(function () { copyButton.textContent = 'Copied'; }, function () {});
+        });
+      } else {
+        copyButton.hidden = true;
+      }
+
+      dialog.querySelector('.promo-close').addEventListener('click', function () { dialog.close(); });
+      dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+      dialog.addEventListener('close', function () { dialog.remove(); });
+
+      document.body.appendChild(dialog);
+      window.setTimeout(function () {
+        dialog.showModal();
+        try { window.localStorage.setItem(seenKey, '1'); } catch (err) { /* storage blocked */ }
+      }, previewSale ? 0 : 1500);
+    }
+  }
 })();

@@ -87,6 +87,7 @@ The domain is billed separately from your Wix plan, so first check it hasn't exp
 ## 5. Making changes later
 
 - **Prices:** change them in Stripe *and* in the HTML. Search the files for `30.00`, `74.95` and `89.95`.
+- **Sales:** create a discount code in Stripe (Product catalogue → Coupons), then put the same code and the sale dates in `promo` in `assets/js/config.js`. During those dates a popup and the top bar advertise it. Add `?preview-sale` to any page address to preview it.
 - **Text:** edit the `.html` files directly.
 - **Colours and fonts:** the top of `assets/css/styles.css`. Button text on beige is dark so it's easy to read. Set `--on-beige: #FAFAFA;` to go back to the white text your Wix site used.
 - GitHub Pages caches files for about 10 minutes, so edits can take a moment to show up.
