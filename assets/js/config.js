@@ -39,7 +39,7 @@ window.WJ_CONFIG = {
     title: 'Black Friday Sale',
     text: '20% off everything',
     code: 'BLACKFRIDAY20',
-    starts: '2026-11-27',  // first day of the sale (YYYY-MM-DD)
-    ends: '2026-11-30'     // last day of the sale
+    starts: '2026-11-01',  // first day of the sale (YYYY-MM-DD)
+    ends: '2026-12-07'     // last day of the sale
   }
 };
