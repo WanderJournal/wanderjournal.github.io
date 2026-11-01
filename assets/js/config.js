@@ -10,12 +10,12 @@ window.WJ_CONFIG = {
    * Leave a link empty ('') and its button shows "Coming soon"; write 'sold-out' to show "Sold out".
    */
   paymentLinks: {
-    'wander-journal-pink':  '',
-    'wander-journal-green': '',
-    'wander-journal-blue':  '',
-    'wander-journal-grey':  '',
-    'tri-colour-pack':      '',
-    'quad-colour-pack':     ''
+    'wander-journal-pink':  'https://buy.stripe.com/7sYcN5eK07sm1od5o8g7e00',
+    'wander-journal-green': 'https://buy.stripe.com/7sY28r45mbIC9UJ2bWg7e01',
+    'wander-journal-blue':  'https://buy.stripe.com/28E9AT59qeUOaYN5o8g7e03',
+    'wander-journal-grey':  'https://buy.stripe.com/3cIaEX8lCcMG1odeYIg7e02',
+    'tri-colour-pack':      'https://buy.stripe.com/8x200j1Xe13Y6Ix03Og7e04',
+    'quad-colour-pack':     'https://buy.stripe.com/bJecN559qh2WaYN3g0g7e05'
   },
 
   /*

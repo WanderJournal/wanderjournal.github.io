@@ -46,6 +46,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 
 /* ---------- Header ---------- */
 .site-header { position: relative; z-index: 20; background: var(--beige); }
+.announcement { margin: 0; padding: 8px 16px; background: var(--ink); color: var(--paper); font-size: 13px; line-height: 1.5; letter-spacing: .04em; text-align: center; }
 .header-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: var(--header-h); padding: 0 12px; }
 .brand { justify-self: start; display: flex; align-items: center; gap: 22px; color: #fff; text-decoration: none; }
 .brand img { width: 92px; height: auto; }

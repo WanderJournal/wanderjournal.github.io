@@ -22,7 +22,7 @@ A rebuild of your Wix site in plain HTML/CSS/JS, with Stripe checkout. It has no
 
 1. Create an account at [stripe.com/au](https://stripe.com/au). Finish verification and add your bank account for payouts.
 2. **Create 6 products** (Product catalogue → Add product), all priced in AUD:
-   - Wander Journal – Pink, Green, Blue, Grey: **$39.95** each
+   - Wander Journal – Pink, Green, Blue, Grey: **$30.00** each
    - Wander Journal – Tri-colour Pack: **$74.95**
    - Wander Journal – Quad-colour Pack: **$89.95**
 
@@ -86,7 +86,7 @@ The domain is billed separately from your Wix plan, so first check it hasn't exp
 
 ## 5. Making changes later
 
-- **Prices:** change them in Stripe *and* in the HTML. Search the files for `39.95`, `74.95` and `89.95`.
+- **Prices:** change them in Stripe *and* in the HTML. Search the files for `30.00`, `74.95` and `89.95`.
 - **Text:** edit the `.html` files directly.
 - **Colours and fonts:** the top of `assets/css/styles.css`. Button text on beige is dark so it's easy to read. Set `--on-beige: #FAFAFA;` to go back to the white text your Wix site used.
 - GitHub Pages caches files for about 10 minutes, so edits can take a moment to show up.
