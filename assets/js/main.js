@@ -222,7 +222,12 @@
     var saleText = promo.text || 'Sale';
     var bar = document.querySelector('[data-announcement]');
     if (bar) {
-      bar.textContent = (promo.title ? promo.title + ': ' : '') + saleText + ' with code ' + promo.code + ' · ' + bar.textContent;
+      var usual = bar.textContent;
+      var codeTag = document.createElement('strong');
+      codeTag.textContent = promo.code;
+      bar.textContent = (promo.title ? promo.title + ': ' : '') + saleText + ' with code ';
+      bar.appendChild(codeTag);
+      bar.appendChild(document.createTextNode(' · ' + usual));
     }
 
     var seenKey = 'wj-sale-seen-' + promo.code;

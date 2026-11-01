@@ -22,7 +22,7 @@ A rebuild of your Wix site in plain HTML/CSS/JS, with Stripe checkout. It has no
 
 1. Create an account at [stripe.com/au](https://stripe.com/au). Finish verification and add your bank account for payouts.
 2. **Create 6 products** (Product catalogue → Add product), all priced in AUD:
-   - Wander Journal – Pink, Green, Blue, Grey: **$30.00** each
+   - Wander Journal – Pink, Green, Blue, Grey: **$30** each
    - Wander Journal – Tri-colour Pack: **$74.95**
    - Wander Journal – Quad-colour Pack: **$89.95**
 
