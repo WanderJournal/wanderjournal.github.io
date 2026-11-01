@@ -72,6 +72,8 @@ Everything in this folder is safe to make public. Stripe Payment Links and a For
 
 ## 4. Connect wanderjournalglobal.com
 
+> **Update (Nov 2026):** wanderjournalglobal.com has expired, so the steps below no longer apply as written. Links, social previews and the sitemap use `https://wanderjournal.github.io` for now. When you connect a domain, replace that address in every file, and add the DNS records wherever you bought the domain.
+
 The domain is billed separately from your Wix plan, so first check it hasn't expired (Wix → Domains). You don't need to transfer it away from Wix.
 
 1. **GitHub:** Settings → Pages → *Custom domain* → enter `www.wanderjournalglobal.com` and save.

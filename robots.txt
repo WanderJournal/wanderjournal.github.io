@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.wanderjournalglobal.com/sitemap.xml
+Sitemap: https://wanderjournal.github.io/sitemap.xml
